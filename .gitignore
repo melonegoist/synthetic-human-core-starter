@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# Gradle Wrapper
+gradlew
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# IDE
+.idea/
+*.iml
+*.swp
+*.bak
+
+# Локальные настройки
+local.properties
+
+# Кэш
+.cache/
