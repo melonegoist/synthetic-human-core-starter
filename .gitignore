@@ -103,3 +103,5 @@ temp/
 
 # Gradle Wrapper
 !gradle-wrapper.jar
+
+.gitignore
