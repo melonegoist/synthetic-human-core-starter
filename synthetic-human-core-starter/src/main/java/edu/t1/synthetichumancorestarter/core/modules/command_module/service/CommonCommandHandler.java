@@ -14,16 +14,17 @@ public class CommonCommandHandler implements CommandExecutor {
 
     private final CommandLogger logger;
 
-    @WeylandWatchingYou(mode = AuditMode.CONSOLE, description = "Auditing common commands execution...")
+    @WeylandWatchingYou(mode = AuditMode.KAFKA, description = "Auditing common commands execution...")
     @Override
     public void execute(Command command) {
+        System.out.println("tttttt");
         logger.log(getCommonCommandResult(command));
     }
 
     private String getCommonCommandResult(Command command) {
         if (command.priority() == Priority.CRITICAL) return "ERROR! CRITICAL SITUATION!";
 
-        return String.format("New command received!\n%s", command.toString());
+        return String.format("New command received!\n%s", command);
 
         //TODO: check
     }
