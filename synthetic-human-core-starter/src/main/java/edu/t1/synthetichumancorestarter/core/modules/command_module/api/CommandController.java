@@ -2,7 +2,7 @@ package edu.t1.synthetichumancorestarter.core.modules.command_module.api;
 
 import edu.t1.synthetichumancorestarter.core.modules.audit_module.annotation.WeylandWatchingYou;
 import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.AuditMode;
-import edu.t1.synthetichumancorestarter.core.modules.command_module.exceptions.InvalidCommandException;
+import edu.t1.synthetichumancorestarter.core.modules.error_module.InvalidCommandException;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Command;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Priority;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.queue.CommandQueue;
