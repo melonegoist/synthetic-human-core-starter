@@ -11,7 +11,21 @@ public class ConsoleAuditService implements AuditService {
 
     @Override
     public void send(AuditEvent auditEvent) {
-        log.info("[AUDIT] Auditing event: {}", auditEvent);
+        log.info("\n[AUDIT] Event{\n" +
+                        "  methodName={},\n" +
+                        "  description={},\n" +
+                        "  args={},\n" +
+                        "  result={},\n" +
+                        "  timestamp={},\n" +
+                        "  status={}\n" +
+                        "}",
+                auditEvent.getMethodName(),
+                auditEvent.getDescription(),
+                auditEvent.getArgs(),
+                auditEvent.getResult(),
+                auditEvent.getTimestamp(),
+                auditEvent.getStatus()
+        );
     }
 
 }

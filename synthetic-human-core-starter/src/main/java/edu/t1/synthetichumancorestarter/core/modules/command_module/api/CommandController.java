@@ -1,5 +1,7 @@
 package edu.t1.synthetichumancorestarter.core.modules.command_module.api;
 
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.annotation.WeylandWatchingYou;
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.AuditMode;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.exceptions.InvalidCommandException;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Command;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Priority;
@@ -28,6 +30,7 @@ public class CommandController {
     private final CriticalCommandsHandler criticalCommandsHandler;
     private final CommonCommandHandler commonCommandHandler;
 
+    @WeylandWatchingYou(mode = AuditMode.CONSOLE, description = "Auditing adding command...")
     @PostMapping
     public ResponseEntity<CommandResponse> addCommand(@Valid @RequestBody CommandRequest request) throws InvalidCommandException { // TODO
         Command command = transferToCommand(request);

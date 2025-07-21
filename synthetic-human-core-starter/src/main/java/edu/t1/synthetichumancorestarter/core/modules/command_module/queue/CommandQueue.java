@@ -1,5 +1,7 @@
 package edu.t1.synthetichumancorestarter.core.modules.command_module.queue;
 
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.annotation.WeylandWatchingYou;
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.AuditMode;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.exceptions.QueueOverflowException;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.util.NamedThreadFactory;
@@ -29,6 +31,7 @@ public class CommandQueue {
         this.meterRegistry = meterRegistry;
     }
 
+    @WeylandWatchingYou(mode = AuditMode.CONSOLE, description = "Auditing adding task in queue...")
     public void addTask(Runnable task) throws QueueOverflowException {
         if (executor.getQueue().remainingCapacity() == 0) {
             throw new QueueOverflowException("command queue is full!");

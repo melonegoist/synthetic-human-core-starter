@@ -1,5 +1,7 @@
 package edu.t1.synthetichumancorestarter.core.modules.command_module.service;
 
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.annotation.WeylandWatchingYou;
+import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.AuditMode;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.CommandLogger;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Command;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Priority;
@@ -14,12 +16,14 @@ public class CriticalCommandsHandler implements CommandExecutor {
 
     private final CommandLogger logger;
 
+    @WeylandWatchingYou(mode = AuditMode.CONSOLE, description = "Auditing critical command execution...")
     @Override
     public void execute(Command command) {
         logger.log(getCriticalCommandResult(command));
         // TODO
     }
 
+    @WeylandWatchingYou(mode= AuditMode.CONSOLE, description = "Testing Critical Command")
     private String getCriticalCommandResult(Command command) {
         if (command.priority() == Priority.COMMON) return "Error! Wrong command priority!";
 

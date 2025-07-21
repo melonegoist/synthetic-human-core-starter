@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.time.Instant;
+import java.util.Arrays;
 
 @Aspect
 @Component
@@ -38,17 +39,16 @@ public class AuditAspect {
         }
     }
 
-    private AuditEvent createEvent(ProceedingJoinPoint pjp, WeylandWatchingYou audit) throws Throwable {
+    private AuditEvent createEvent(ProceedingJoinPoint pjp, WeylandWatchingYou audit) {
         MethodSignature signature = (MethodSignature) pjp.getSignature();
         Method method = signature.getMethod();
 
-        return new AuditEvent(
-                method.getName(),
-                audit.description(),
-                pjp.getArgs(),
-                null, // TODO
-                Instant.now().toString(),
-                EventStatus.IN_PROGRESS
-        );
+        return AuditEvent.builder(pjp.getArgs())
+                .methodName(method.getName())
+                .description(audit.description())
+                .args(Arrays.toString(pjp.getArgs()))
+                .timestamp(Instant.now().toString())
+                .status(EventStatus.IN_PROGRESS)
+                .build();
     }
 }
