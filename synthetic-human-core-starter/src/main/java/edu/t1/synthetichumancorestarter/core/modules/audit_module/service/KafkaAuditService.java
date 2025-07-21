@@ -10,12 +10,13 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class KafkaAuditService implements AuditService {
-    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    private final KafkaTemplate<String, AuditEvent> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
     @Override
     public void send(AuditEvent auditEvent) {
-        kafkaTemplate.send("audit-logs", serialize(auditEvent));
+        kafkaTemplate.send("audit-logs", auditEvent);
     }
 
     private String serialize(AuditEvent auditEvent) {
@@ -25,4 +26,5 @@ public class KafkaAuditService implements AuditService {
             throw new RuntimeException("Failed to serialize AuditEvent", e);
         }
     }
+
 }
