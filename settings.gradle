@@ -1,0 +1,6 @@
+rootProject.name = "weyland-yutani"
+
+include (
+	":synthetic-human-core-starter",
+	":bishop-prototype"
+)
