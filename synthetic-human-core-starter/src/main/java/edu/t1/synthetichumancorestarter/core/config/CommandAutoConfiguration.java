@@ -4,9 +4,7 @@ import edu.t1.synthetichumancorestarter.core.modules.command_module.CommandProce
 import edu.t1.synthetichumancorestarter.core.modules.command_module.queue.CommandQueue;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.service.CommonCommandHandler;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.service.CriticalCommandsHandler;
-import edu.t1.synthetichumancorestarter.core.modules.command_module.validation.CommandValidator;
 import edu.t1.synthetichumancorestarter.core.modules.monitoring_module.OccupancyMetrics;
-import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

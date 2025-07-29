@@ -4,7 +4,6 @@ import edu.t1.synthetichumancorestarter.core.modules.audit_module.annotation.Wey
 import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.AuditEvent;
 import edu.t1.synthetichumancorestarter.core.modules.audit_module.model.EventStatus;
 import edu.t1.synthetichumancorestarter.core.modules.audit_module.service.AuditServiceFactory;
-import jdk.jfr.Event;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

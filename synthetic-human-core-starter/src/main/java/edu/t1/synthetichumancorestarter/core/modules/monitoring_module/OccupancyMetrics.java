@@ -6,7 +6,6 @@ import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

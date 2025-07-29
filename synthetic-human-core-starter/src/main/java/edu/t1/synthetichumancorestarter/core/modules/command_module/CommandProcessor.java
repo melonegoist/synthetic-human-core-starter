@@ -6,10 +6,8 @@ import edu.t1.synthetichumancorestarter.core.modules.command_module.model.Comman
 import edu.t1.synthetichumancorestarter.core.modules.command_module.queue.CommandQueue;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.service.CommonCommandHandler;
 import edu.t1.synthetichumancorestarter.core.modules.command_module.service.CriticalCommandsHandler;
-import edu.t1.synthetichumancorestarter.core.modules.command_module.validation.CommandValidator;
 import edu.t1.synthetichumancorestarter.core.modules.error_module.InvalidCommandException;
 import edu.t1.synthetichumancorestarter.core.modules.monitoring_module.OccupancyMetrics;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
